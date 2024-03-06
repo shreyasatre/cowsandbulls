@@ -27,12 +27,13 @@ def main():
         guess = input(" ")
         tries += 1
         
+        if guess == "reveal":
+            print(f"Code was {code}")
+            break
+
         if len(set(list(str(guess)))) != 4:
             print("guess must have unique digits")
         else:
-            if guess == "reveal":
-                print(f"Code was {code}")
-                break
             if guess == str(code):
                 print(f"Correct in {tries} tries!")
                 break
