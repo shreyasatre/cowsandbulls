@@ -32,7 +32,9 @@ def main():
             break
 
         if len(set(list(str(guess)))) != 4:
-            print("guess must have unique digits")
+            print("guess must have four unique digits")
+        elif int(guess) < 1000:
+            print("guess must be between 1000 and 9999")        
         else:
             if guess == str(code):
                 print(f"Correct in {tries} tries!")
@@ -46,7 +48,7 @@ def main():
                 elif str(guess[i]) in str(code):
                     cow += 1
             
-            print(f"{cow} cows, {bull} bulls")
+            print(f"{cow} cow(s), {bull} bull(s)")
 # ---
             
 if __name__ == "__main__":
